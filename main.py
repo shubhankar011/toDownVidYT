@@ -7,7 +7,7 @@ import os
 name = input("Name of the file: ")
 name = name+'.mp4'
 
-# Choosing Options to download
+# Choosing Options to download (yt_opts is a dictionary which has options from video to download)
 yt_opts = {
     'verbose': False,
     'download_sections': [{
