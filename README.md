@@ -8,3 +8,4 @@
 <li> To open the video in VLC, you need to run the file in IDLE Python
 <li> To open the file in Windows Media Player, you can run on any interpreter.
 <h4><I>NOTE:</I> It downloads in 360p only with Audio because youtube provide audio and video in the media only with 360p but I'll fix this bug. Please, keep patience!!!</h4>
+<h5><u>Update 1: </u>Added more Configurations to the list - TIME - 02:35 AM 05-01-2025</h5>
