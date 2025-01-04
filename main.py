@@ -7,26 +7,60 @@ import os
 name = input("Name of the file: ")
 name = name+'.mp4'
 
-# Choosing Options to download (yt_opts is a dictionary which has options from video to download)
+#Defining Progress Hook
+def progress_hook(d):
+    if d['status'] == 'downloading':
+        print(f"Downloading: {d['_percent_str']} at {d['_speed_str']}")
+        
+#Making a Well Message for the user
+class Logger_error:
+    def debug(self, msg):
+        print("Downloading...",msg)
+    
+    def warning(self, msg):
+        print(f'The Warning is: {msg}')
+    
+    def error(self, msg):
+        print(f'The Error is: {msg}')
+
+
+# Seleting Configuration (yt_opts is a dictionary which has configurations to set)
 yt_opts = {
-    'verbose': False,
+    'verbose': True,
     'download_sections': [{
         'section': {
             'start_time': 2,
-            'end_time': 7
+            'end_time': 30
         }
     }],
+    #'format': 'bestaudio+bestvideo/best', -- Use this if you've downloaded and installed FFmpegVideoConvertor
     'format': 'best',
-    'outtmpl': f'D:/Programming Files/Python Files/YT-DLP/{name}'
-}
+    'outtmpl': f'D:/Programming Files/Python Files/YT-DLP/{name}',
+    'progress_hook': [progress_hook],
+    'logger': Logger_error(),
+    'writesubtitles': True,
+    'subtitleslangs': ['en'],
+    # 'postprocessors': [{ --If you've FFmpegVideoConvertor
+    #     'key':'FFmpegVideoConvertor',
+    #     'preferedformat':'mp4'
+    # }]
 
-# Downloading file 
-#Asking the URL of File and give URL of youtube video, dont give a URL of a playlist
-urlOfVideo = input("Enter the url: ") 
-ydl = yt_dlp.YoutubeDL(yt_opts)
-info = ydl.extract_info(urlOfVideo, download=False)
-print(info)
-ydl.download(urlOfVideo)
+}
+# Asking URL of a specific video, dont give url of a playlist
+urlOfVideo = input("Enter the url: ")
+
+# Downloading Video
+with YoutubeDL(yt_opts) as ydl:
+    #Info of Video if you don't want comment the below 2 lines
+    info = ydl.extract_info(urlOfVideo, download=False)
+    print(info)
+    ydl.download(urlOfVideo)
+
+# If upper downloading code doesn't work then try with this
+# ydl = yt_dlp.YoutubeDL(yt_opts)
+# info = ydl.extract_info(urlOfVideo, download=False)
+# print(info)
+# ydl.download(urlOfVideo)
 
 # Playing the media from Windows Media Player
 os.startfile(f'D:/Programming Files/Python Files/YT-DLP/{name}')
