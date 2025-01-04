@@ -5,5 +5,5 @@
 <li> You need to paste the URL(s) of specific video. 
 <li> Your downloading will start
 <li> Don't get panic if you see a lot of processing in the terminal
-<li> To open the video in VLC, you need to run the file IDLE Python
+<li> To open the video in VLC, you need to run the file in IDLE Python
 <li> To open the file in Windows Media Player, you can run on any interpreter.
