@@ -7,4 +7,4 @@
 <li> Don't get panic if you see a lot of processing in the terminal
 <li> To open the video in VLC, you need to run the file in IDLE Python
 <li> To open the file in Windows Media Player, you can run on any interpreter.
-<h4><I>NOTE:</I> It downloads in 360p only with Audio because youtube provide audio and video in the media only with 360p</h4>
+<h4><I>NOTE:</I> It downloads in 360p only with Audio because youtube provide audio and video in the media only with 360p but I'll fix this bug. Please, keep patience!!!</h4>
