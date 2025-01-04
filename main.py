@@ -3,6 +3,7 @@ from yt_dlp import YoutubeDL
 import vlc
 import os
 
+# Defining name of file
 name = input("Name of the file: ")
 name = name+'.mp4'
 
@@ -19,7 +20,9 @@ yt_opts = {
     'outtmpl': f'D:/Programming Files/Python Files/YT-DLP/{name}'
 }
 
-urlOfVideo = input("Enter the url: ")
+# Downloading file 
+#Asking the URL of File and give URL of youtube video, dont give a URL of a playlist
+urlOfVideo = input("Enter the url: ") 
 ydl = yt_dlp.YoutubeDL(yt_opts)
 info = ydl.extract_info(urlOfVideo, download=False)
 print(info)
