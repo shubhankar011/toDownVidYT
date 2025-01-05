@@ -3,7 +3,9 @@ from yt_dlp import YoutubeDL
 import vlc
 import os
 
-# Defining name of file
+# Defining name and folder/path of file
+print("Try Using for e.g. : 'C://User//PC//Videos' or just 'Video'")
+dir = input("Enter the folder/path to save the file: ")
 name = input("Name of the file: ")
 name = name+'.mp4'
 
@@ -35,7 +37,7 @@ yt_opts = {
     }],
     #'format': 'bestaudio+bestvideo/best', -- Use this if you've downloaded and installed FFmpegVideoConvertor
     'format': 'best',
-    'outtmpl': f'D:/Programming Files/Python Files/YT-DLP/{name}',
+    'outtmpl': f'{dir}/{name}',
     'progress_hook': [progress_hook],
     'logger': Logger_error(),
     'writesubtitles': True,
