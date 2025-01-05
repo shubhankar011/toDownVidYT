@@ -5,7 +5,9 @@
 <li> You need to paste the URL(s) of specific video. 
 <li> Your downloading will start
 <li> Don't get panic if you see a lot of processing in the terminal
-<li> To open the video in VLC, you need to run the file in IDLE Python
+<li> To open the video in VLC, you need to run the file in IDLE Python. You have to download by <code>pip install python-vlc</code>
 <li> To open the file in Windows Media Player, you can run on any interpreter.
 <h4><I>NOTE:</I> It downloads in 360p only with Audio because youtube provide audio and video in the media only with 360p but I'll fix this bug. Please, keep patience!!!</h4>
+<h4>You have to download the yt-dlp in your system. Command is <code>pip install yt-dlp</code></h4>
 <h5><u>Update 1: </u>Added more Configurations to the Configuring dictionary - TIME - 02:35 AM 05-01-2025</h5>
+
