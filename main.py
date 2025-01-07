@@ -65,11 +65,11 @@ with YoutubeDL(yt_opts) as ydl:
 # ydl.download(urlOfVideo)
 
 # Playing the media from Windows Media Player
-os.startfile(f'D:/Programming Files/Python Files/YT-DLP/{name}')
+os.startfile(f'{dir}/{name}')
 
 # Playing the file from VLC Media Player
 player = vlc.MediaPlayer()
-file = vlc.Media(f'D:/Programming Files/Python Files/YT-DLP/{name}')
+file = vlc.Media(f'{dir}/{name}')
 player.set_media(file)
 
 player.play()
