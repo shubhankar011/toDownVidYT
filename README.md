@@ -12,10 +12,11 @@
 <h5><u>Update 1: </u>Added more Configurations to the Configuring dictionary - TIME - 02:35 AM 05-01-2025</h5>
 <h5><u>Update 2: </u>Fixed the opening bug of video or audio file which causes error in the terminal - TIME - 09:17 PM 07-01-2025</h5>
 <h5>
-  <u>Update 3: </u>
+  <i>Update 3: </i>
   This is the massive update named 01.8.3a. <i>It has now -</i>
   <li>Error Handling when opening file automatically. Added this feature just because most of the times file doesn't open automatically after downloading. I'll fix this bug later, need more time</li>
   <li>Added options to download different quality of file whether hd or sd</li>
   <li>Added a option to download audio file</li>
   <li>Added a feature to automatically make the folder if the user entered the folder name doesn't exist, so that it won't give error.</li>
+  TIME - 01:09 PM - 08-01-2025
 </h5>
