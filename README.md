@@ -10,6 +10,7 @@
 <li> To open the file in Windows Media Player, you can run on any interpreter.
 <h4><I>NOTE:</I> It downloads in 360p only with Audio because youtube provide audio and video in the media only with 360p but I'll fix this bug. Please, keep patience!!!</h4>
 <h4>You have to download the yt-dlp in your system. Command is <code>pip install yt-dlp</code></h4>
+<h3>UPDATES: </h3>
 <h5><u>Update 1: </u>Added more Configurations to the Configuring dictionary - TIME - 02:35 AM 05-01-2025</h5>
 <h5><u>Update 2: </u>Fixed the opening bug of video or audio file which causes error in the terminal - TIME - 09:17 PM 07-01-2025</h5>
 <h5>
@@ -21,3 +22,4 @@
   <li>Added a feature to automatically make the folder if the user entered the folder name doesn't exist, so that it won't give error.</li>
   TIME - 01:09 PM - 08-01-2025
 </h5>
+<h5>Update 4: Fixed the bug which causes not to to open file - TIME - 11:59 PM - 10-01-2025</h5>
