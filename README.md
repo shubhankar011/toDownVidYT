@@ -1,6 +1,7 @@
 # toDownVidYT
 <i><b>This is the project I decided to make with the start of 2025 and will complete this project by the end of 2025</b>.</i>
 <h3>To Start with the main.py -</h3>
+<li>First, Install and ffmpeg 7.1 to your Path</li>
 <li> You need to first enter the detail of video for e.g. location,name,etc. Try syntax - video
 <li> You need to paste the URL(s) of specific video. 
 <li> Your downloading will start
