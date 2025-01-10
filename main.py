@@ -9,7 +9,7 @@ dir = input("Enter the folder/path to save the file: ")
 if not os.path.exists(dir):
     os.makedirs(dir)
 name = input("Name of the file: ")
-name = name+'.mp4'
+# name = name+'.mp4' 
 print("For audio-only - 'a'//0, video-only - 'v'//1, video with both in hiqh quality - 'hva', both in low quality - 'sva'")
 select = input("Enter the type of video:")
 
