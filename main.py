@@ -91,6 +91,11 @@ with YoutubeDL(yt_opts) as ydl:
 
 file_path = os.path.abspath(f'{dir}/{name}.{file_extension}
 
+# Making the records of how many times it is used
+file = open('blanks.txt','a')
+file.writelines(f'The Name of file is: {name} \nThe Direcotry it is stored in: {file_path} \nThe URL(s) is:{urlOfVideo}')
+file.close()
+
 # Playing the media from Windows Media Player
 try:
     os.startfile(file_path)
