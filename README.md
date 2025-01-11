@@ -22,4 +22,5 @@
   <li>Added a feature to automatically make the folder if the user entered the folder name doesn't exist, so that it won't give error.</li>
   TIME - 01:09 PM - 08-01-2025
 </h5>
-<h5>Update 4: Fixed the bug which causes not to to open file - TIME - 11:59 PM - 10-01-2025</h5>
+<h5>Update 4: Fixed the bug which causes not to to open file - TIME - 11:59 PM - 10-01-2025.</h5>
+<h5>Issue - TIME - 03:35 PM - 11-01-2025 - If you select the 'hva' format then the ffmpeg video convertor will take atleat 2 minutes to convert the .webm to .mp4. So, in next upgrade I will take fix this bug.</h5>
