@@ -1,4 +1,7 @@
 # toDownVidYT
+<div>
+<legend><b><i>Creator & Author - Shubhankar Kumar</i></b></legend>
+</div>
 <i><b>This is the project I decided to make with the start of 2025 and will complete this project by the end of 2025</b>.</i>
 <h3>To Start with the main.py -</h3>
 <li>First, Install and ffmpeg 7.1 to your Path</li>
