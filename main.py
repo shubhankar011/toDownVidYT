@@ -1,107 +1,68 @@
-import yt_dlp
-from yt_dlp import YoutubeDL
-import vlc
+import yt_dlp 
 import os
 
-# Defining name and folder/path of file
-print("Try Using for e.g. : 'C://User//PC//Videos' or just 'Video'")
-dir = input("Enter the folder/path to save the file: ")
-if not os.path.exists(dir):
-    os.makedirs(dir)
-name = input("Name of the file: ")
-# name = name+'.mp4' 
-print("For audio-only - 'a'//0, video-only - 'v'//1, video with both in hiqh quality - 'hva', both in low quality - 'sva'")
-select = input("Enter the type of video:")
+def yt_iops(url, output, path, name):
 
-#Defining Progress Hook
-def progress_hook(d):
-    if d['status'] == 'downloading':
-        print(f"Downloading: {d['_percent_str']} at {d['_speed_str']}")
-        
-#Making a Well Message for the user
-class Logger_error:
-    def debug(self, msg):
-        print("Downloading...",msg)
-    
-    def warning(self, msg):
-        print(f'The Warning is: {msg}')
-    
-    def error(self, msg):
-        print(f'The Error is: {msg}')
+    print(output)
+    choose = int(input("Enter the index of the suitable option: "))
 
-
-# Seleting Configuration (yt_opts is a dictionary which has configurations to set)
-yt_opts = {
-    'verbose': True,
-    'download_sections': [{
+    yt_opts = {
+        'verbose' : False,
+        'format' : f'{output[choose]}',
+        'download_Sections': [{
         'section': {
-            'start_time': 2,
-            'end_time': 30
+                'start_time': 2,
+                'end_time': 30
+            }
+        }],
+        'writesubtitles': True,
+        'subtitleslangs': ['en'],
+        'retries':10,
+        'cookiefile':'D:/Programming Files/New Folder/python/cookies.txt',
+        'outtmpl': f"{path}/{name}.%(ext)s",
+        'ffmpeg_location': 'C:/ffmpeg/bin',
+        'postprocessors': [{
+            'key':'FFmpegVideoConvertor',
+            'preferedformat': 'mp4'
+        },
+        {
+            'key':'FFmpegEmbedSubtitle'
         }
-    }],
-    #'format': 'bestaudio+bestvideo/best', -- Use this if you've downloaded and installed FFmpegVideoConvertor
-    'format': 'best',
-    'outtmpl': f'{dir}/{name}',
-    'progress_hook': [progress_hook],
-    'logger': Logger_error(),
-    'writesubtitles': True,
-    'subtitleslangs': ['en'],
-    'postprocessors': [{
-        'key':'FFmpegVideoConvertor',
-        'preferedformat':'mp4'
-    }]
+        ]
+    }
 
-}
-# Asking URL of a specific video, dont give url of a playlist
-urlOfVideo = input("Enter the url: ")
+    if name == "" or name == None:
+        yt_opts['outtmpl'] = f'/{path}/%(title)s.%(ext)s'
+    else:
+        yt_opts['outtmpl'] = f'/{path}/{name}.%(ext)s'
+    try:    
+        ydl = yt_dlp.YoutubeDL(yt_opts)
+        ydl.download(f"{url}")
+        
+    except:
+        print("Sorry, Unable to download")
+        
+if __name__ == "__main__":
 
-# Making format according to the file
-if select == 'a' or select == '0':
-    yt_opts['format'] = 'bestaudio'
+    url = input("Enter URL: ")
+    output = ["bestaudio+bestvideo","bestaudio","bestvideo","best"]
+    path = input("Enter the path of the directory in which you want to download the video: ")
+    i = 0
+    name = None
 
-elif select == 'v' or select == '1':
-    yt_opts['format'] = 'bestvideo'
-
-elif select=='hva' or select=='2':
-    yt_opts['format'] = 'bestaudio+bestvideo/best'
-
-elif select == 'sva' or select =='3':
-    yt_opts['format'] = 'best'
-
-with YoutubeDL(yt_opts) as ydl:
-    #Info of Video if you don't want comment the below 2 lines
-    info = ydl.extract_info(urlOfVideo, download=False)
-    # print(info)
-    file_extension = info.get('ext')
-    ydl.download(urlOfVideo)
-
-# Downloading Video
-with YoutubeDL(yt_opts) as ydl:
-    #Info of Video if you don't want comment the below 2 lines
-    info = ydl.extract_info(urlOfVideo, download=False)
-    # print(info)
-    file_extension = info.get('ext')
-    ydl.download(urlOfVideo)
-
-# If upper downloading code doesn't work then try with this
-# ydl = yt_dlp.YoutubeDL(yt_opts)
-# info = ydl.extract_info(urlOfVideo, download=False)
-# print(info)
-# ydl.download(urlOfVideo)
-
-file_path = os.path.abspath(f'{dir}/{name}.{file_extension}
-
-# Playing the media from Windows Media Player
-try:
-    os.startfile(file_path)
-
-    # Playing the file from VLC Media Player
-    player = vlc.MediaPlayer()
-    file = vlc.Media(file_path)
-    player.set_media(file)
+    if 'playlist' in url or '@' in url:
+        print("The given url is of a playlist or a channel, but we will proceed it.")
+        i = 1
+    else:
+        i = 0
     
-    player.play()
-    while player.is_playing():
-        pass
-except:
-    print(f'The file couldn't be played automatically. Go through the DIRECTORY - {file_path}')
+    if i == 1:
+        name = None
+    else: 
+        name = input("Enter the name of the video or just enter for the default video name")
+        name = name.strip()
+
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+    yt_iops(url, output, path, name)
