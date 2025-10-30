@@ -11,22 +11,23 @@ It uses **yt-dlp** as the core downloading engine and **FFmpeg** for postprocess
 ---
 
 ## 🗂️ Project Structure
-├── CLI/ # Console-based version
-│ └── main.py # Original yt-dlp script with user input and console logging
+toDownVidYT/
 │
-├── WEB-based/ # Flask web application
-│ ├── app.py # Flask routes and integration
-│ ├── main_02.py # Backend logic for yt-dlp
-│ ├── templates/
-│ │ └── index.html # Web UI (form input + dynamic messages)
-│ ├── static/
-│ │ └── css/
-│ │ └── style-02.css # Responsive CSS design
-│ └── downloads/ # Output folder for downloaded media
+├── CLI/                         # Console-based version
+│   └── main.py                  # Original yt-dlp script with user input and console logging
 │
-├── requirements.txt # Dependencies (Flask, yt-dlp, etc.)
-└── README.md
-
+├── WEB-based/                   # Flask web application
+│   ├── app.py                   # Flask routes and integration
+│   ├── main_02.py               # Backend logic for yt-dlp
+│   ├── templates/
+│   │   └── index.html           # Web UI (form input + dynamic messages)
+│   ├── static/
+│   │   └── css/
+│   │       └── style-02.css     # Responsive CSS design
+│   └── downloads/               # Output folder for downloaded media
+│
+├── requirements.txt             # Dependencies (Flask, yt-dlp, etc.)
+└── README.md                    # Project documentation
 
 ---
 
@@ -52,56 +53,54 @@ It uses **yt-dlp** as the core downloading engine and **FFmpeg** for postprocess
 ## Quick Start Guide
 
 ### Install dependencies
-
+```bash
 pip install -r requirements.txt
-Install FFmpeg
-
+2️⃣ Install FFmpeg
 Download FFmpeg 7.1 or newer and add it to your system PATH.
-Verify with:
+You can verify it by running:
 
-ffmpeg -version
-Run CLI Version
 bash
+Copy code
+ffmpeg -version
+▶️ Run CLI Version
+bash
+Copy code
 cd CLI
 python main_02.py
-
-
 You’ll be asked to:
 
 Enter a YouTube video URL
 
-Select format and download directory
+Select a format and download directory
 
 Enter an optional filename
 
-CLI version also prints available formats and real-time progress directly in the terminal.
+The CLI version also prints available formats and shows real-time progress directly in the terminal.
 
-Run Web Version
-
+🌐 Run Web Version
+bash
+Copy code
 cd WEB-based
 python app.py
-
-
 Then open your browser and go to:
 
+cpp
+Copy code
 http://127.0.0.1:5000
-
-
 Paste a YouTube link, choose your format, and click Download.
 Files will appear inside the /downloads folder.
-Playback Options
 
-To open automatically in VLC:
-
+🎬 Playback Options
+▶️ To open automatically in VLC
+bash
+Copy code
 pip install python-vlc
+Then run the CLI version using IDLE Python.
 
+💿 To open with Windows Media Player
+Simply run the script from any Python interpreter — it works automatically.
 
-Run the CLI version using IDLE Python.
-
-For Windows Media Player, run from any interpreter — works automatically.
-
- Technical Notes
-
+🧠 Technical Notes
 Uses yt-dlp for extraction, handling DASH streams, and FFmpeg merging.
 
 FFmpeg performs .webm → .mp4 conversion (takes ~1–2 minutes for HD).
@@ -125,23 +124,23 @@ Cookie support (optional): add a cookies.txt next to main_02.py.
 | **30 Oct 2025** | Update 11 *(Final Beta → Main)* | Released stable web-based version, merged into main branch                  |
 Roadmap (Upcoming)
 
- Add real-time progress percentage in web version
+<li> Add real-time progress percentage in web version
 
- Implement multi-threaded FFmpeg merging for faster processing
+ <li>Implement multi-threaded FFmpeg merging for faster processing
 
- Add video thumbnail preview before download
+<li> Add video thumbnail preview before download
 
- User-uploadable cookies (private video support)
+ <li>User-uploadable cookies (private video support)
 
- Implement download queue & history management
+ <li>Implement download queue & history management
 
 ## Author
 
-Shubhankar Kumar
+###Shubhankar Kumar
 
-“Every version of this project taught me something new — from console handling to web routing, from debugging yt-dlp internals to designing responsive UIs.
+<code>“Every version of this project taught me something new — from console handling to web routing, from debugging yt-dlp internals to designing responsive UIs.
 This project isn’t just a downloader; it’s my 2025 journey of becoming a better developer.”
-License
+License</code>
 
 Open for educational and personal use.
 Attribution is appreciated if modified or redistributed.
