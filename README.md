@@ -53,17 +53,18 @@ It uses **yt-dlp** as the core downloading engine and **FFmpeg** for postprocess
 
 ### Install dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt```
 Install FFmpeg
 
 Download FFmpeg 7.1 or newer and add it to your system PATH.
 Verify with:
-
-ffmpeg -version
+```bash
+ffmpeg -version```
 
 Run CLI Version
+```bash
 cd CLI
-python main_02.py
+python main_02.py```
 
 
 You’ll be asked to:
@@ -77,13 +78,14 @@ Enter an optional filename
 CLI version also prints available formats and real-time progress directly in the terminal.
 
 Run Web Version
+```bash
 cd WEB-based
-python app.py
+python app.py```
 
 
 Then open your browser and go to:
-
-http://127.0.0.1:5000
+```bash
+http://127.0.0.1:5000```
 
 
 Paste a YouTube link, choose your format, and click Download.
@@ -91,8 +93,8 @@ Files will appear inside the /downloads folder.
 Playback Options
 
 To open automatically in VLC:
-
-pip install python-vlc
+```bash
+pip install python-vlc```
 
 
 Run the CLI version using IDLE Python.
