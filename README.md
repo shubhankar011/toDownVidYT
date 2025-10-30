@@ -1,29 +1,146 @@
-# toDownVidYT
-<div>
-<legend><b><i>Creator & Author - Shubhankar Kumar</i></b></legend>
-</div>
-<i><b>This is the project I decided to make with the start of 2025 and will complete this project by the end of 2025</b>.</i>
-<h3>To Start with the main.py -</h3>
-<li>First, Install and ffmpeg 7.1 to your Path</li>
-<li> You need to first enter the detail of video for e.g. location,name,etc. Try syntax - video
-<li> You need to paste the URL(s) of specific video. 
-<li> Your downloading will start
-<li> Don't get panic if you see a lot of processing in the terminal
-<li> To open the video in VLC, you need to run the file in IDLE Python. You have to download by <code>pip install python-vlc</code>
-<li> To open the file in Windows Media Player, you can run on any interpreter.
-<h4><I>NOTE:</I> It downloads in 360p only with Audio because youtube provide audio and video in the media only with 360p but I'll fix this bug. Please, keep patience!!!</h4>
-<h4>You have to download the yt-dlp in your system. Command is <code>pip install yt-dlp</code></h4>
-<h3>UPDATES: </h3>
-<h5><u>Update 1: </u>Added more Configurations to the Configuring dictionary - TIME - 02:35 AM 05-01-2025</h5>
-<h5><u>Update 2: </u>Fixed the opening bug of video or audio file which causes error in the terminal - TIME - 09:17 PM 07-01-2025</h5>
-<h5>
-  <i>Update 3: </i>
-  This is the massive update named 01.8.3a. <i>It has now -</i>
-  <li>Error Handling when opening file automatically. Added this feature just because most of the times file doesn't open automatically after downloading. I'll fix this bug later, need more time</li>
-  <li>Added options to download different quality of file whether hd or sd</li>
-  <li>Added a option to download audio file</li>
-  <li>Added a feature to automatically make the folder if the user entered the folder name doesn't exist, so that it won't give error.</li>
-  TIME - 01:09 PM - 08-01-2025
-</h5>
-<h5>Update 4: Fixed the bug which causes not to to open file - TIME - 11:59 PM - 10-01-2025.</h5>
-<h5>Issue - TIME - 03:35 PM - 11-01-2025 - If you select the 'hva' format then the ffmpeg video convertor will take atleat 2 minutes to convert the .webm to .mp4. So, in next upgrade I will take fix this bug.</h5>
+# 🎥 toDownVidYT
+### Creator & Author — **Shubhankar Kumar**
+
+> *“A project I began at the start of 2025 to explore YouTube video processing, backend scripting, and web-based automation using Python. Over time, it evolved from a CLI downloader into a full Flask web application with modular design and UI.”*
+
+## 🧩 Overview
+**toDownVidYT** is a two-part Python project designed to download YouTube videos or audio with full control over format, naming, and storage — first as a **command-line tool**, later expanded into a **web-based Flask interface**.
+
+It uses **yt-dlp** as the core downloading engine and **FFmpeg** for postprocessing and format conversion.
+
+---
+
+## 🗂️ Project Structure
+├── CLI/ # Console-based version
+│ └── main.py # Original yt-dlp script with user input and console logging
+│
+├── WEB-based/ # Flask web application
+│ ├── app.py # Flask routes and integration
+│ ├── main_02.py # Backend logic for yt-dlp
+│ ├── templates/
+│ │ └── index.html # Web UI (form input + dynamic messages)
+│ ├── static/
+│ │ └── css/
+│ │ └── style-02.css # Responsive CSS design
+│ └── downloads/ # Output folder for downloaded media
+│
+├── requirements.txt # Dependencies (Flask, yt-dlp, etc.)
+└── README.md
+
+
+---
+
+## ⚙️ Core Features
+### 🧮 CLI Version
+- Full terminal-based interaction  
+- Dynamic format selection (`bestaudio`, `bestvideo`, `bestaudio+bestvideo`, `best`)  
+- Auto-creates download folders if missing  
+- Handles FFmpeg conversion automatically  
+- Console logs all operations for debugging and clarity  
+
+### Web-Based Version
+- Flask-powered web interface  
+- Responsive HTML + CSS front-end  
+- Real-time progress animation  
+- Format dropdown selection  
+- Downloads stored in `/downloads`  
+- Optional cookies.txt integration (for private videos)  
+- Backend error handling and FFmpeg merging  
+
+---
+
+## Quick Start Guide
+
+### Install dependencies
+```bash
+pip install -r requirements.txt
+Install FFmpeg
+
+Download FFmpeg 7.1 or newer and add it to your system PATH.
+Verify with:
+
+ffmpeg -version
+
+Run CLI Version
+cd CLI
+python main_02.py
+
+
+You’ll be asked to:
+
+Enter a YouTube video URL
+
+Select format and download directory
+
+Enter an optional filename
+
+CLI version also prints available formats and real-time progress directly in the terminal.
+
+Run Web Version
+cd WEB-based
+python app.py
+
+
+Then open your browser and go to:
+
+http://127.0.0.1:5000
+
+
+Paste a YouTube link, choose your format, and click Download.
+Files will appear inside the /downloads folder.
+Playback Options
+
+To open automatically in VLC:
+
+pip install python-vlc
+
+
+Run the CLI version using IDLE Python.
+
+For Windows Media Player, run from any interpreter — works automatically.
+
+ Technical Notes
+
+Uses yt-dlp for extraction, handling DASH streams, and FFmpeg merging.
+
+FFmpeg performs .webm → .mp4 conversion (takes ~1–2 minutes for HD).
+
+Subtitles can be embedded if available (writesubtitles=True).
+
+Cookie support (optional): add a cookies.txt next to main_02.py.
+| Date            | Update                          | Description                                                                 |
+| --------------- | ------------------------------- | --------------------------------------------------------------------------- |
+| **05 Jan 2025** | Update 1                        | Added more configurations to yt-dlp options dictionary                      |
+| **07 Jan 2025** | Update 2                        | Fixed bug causing downloaded files to not open automatically                |
+| **08 Jan 2025** | Update 3 *(v01.8.3a)*           | Major update: error handling, folder auto-creation, audio-only & HD/SD mode |
+| **10 Jan 2025** | Update 4                        | Fixed file-opening issue                                                    |
+| **11 Jan 2025** | Issue                           | FFmpeg conversion delay (~2 min) on `.webm → .mp4`                          |
+| **04 Feb 2025** | Update 5                        | Removed auto file-opening for stability                                     |
+| **11 Mar 2025** | Update 6                        | Rewrote code to comply with updated YouTube policy changes                  |
+| **20 Jun 2025** | Update 7                        | Added cookie file handling support                                          |
+| **26 Sep 2025** | Update 8                        | Began work on GUI (Beta branch)                                             |
+| **27 Sep 2025** | Update 9                        | GUI Beta improvements and performance tweaks                                |
+| **29 Oct 2025** | Update 10                       | Minor fixes and CSS improvements in Beta                                    |
+| **30 Oct 2025** | Update 11 *(Final Beta → Main)* | Released stable web-based version, merged into main branch                  |
+Roadmap (Upcoming)
+
+ Add real-time progress percentage in web version
+
+ Implement multi-threaded FFmpeg merging for faster processing
+
+ Add video thumbnail preview before download
+
+ User-uploadable cookies (private video support)
+
+ Implement download queue & history management
+
+## Author
+
+Shubhankar Kumar
+
+“Every version of this project taught me something new — from console handling to web routing, from debugging yt-dlp internals to designing responsive UIs.
+This project isn’t just a downloader; it’s my 2025 journey of becoming a better developer.”
+License
+
+Open for educational and personal use.
+Attribution is appreciated if modified or redistributed.
