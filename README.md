@@ -54,7 +54,7 @@ toDownVidYT/
 
 ### Install dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt```
 2️⃣ Install FFmpeg
 Download FFmpeg 7.1 or newer and add it to your system PATH.
 You can verify it by running:
