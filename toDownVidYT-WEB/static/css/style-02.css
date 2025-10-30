@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, rgba(160, 169, 189, 0.7), rgb(188, 130, 255)),
+              url("BC.png") center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container-1 {
+  background: rgba(40, 40, 60, 0.9);
+  padding: 50px 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  width: 100%;
+  max-width: 420px;
+}
+
+.title h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.title p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.field {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.field input {
+  width: 100%;
+  max-width: 320px;
+  height: 45px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 3px solid #fff;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.field input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.field input:focus {
+  border-color: #bfaea7;
+  box-shadow: 0 0 8px #f3f1f1;
+}
+
+.dropdown {
+  width: 100%;
+  max-width: 320px;
+  height: 45px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  border-bottom: 3px solid #fff;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+}
+
+.dropdown option {
+  color: black;
+}
+
+.field button {
+  width: 100%;
+  max-width: 320px;
+  height: 45px;
+  font-size: 18px;
+  color: white;
+  background: linear-gradient(90deg, #ff4500, #ff7043);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.field button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff4500;
+}
+
+.loading-bar {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loading-bar .bar {
+  width: 100px;
+  height: 10px;
+  background: linear-gradient(90deg, #ff4500, #ff7043);
+  border-radius: 5px;
+  margin: 0 auto;
+  animation: loading 1s infinite alternate;
+}
+
+@keyframes loading {
+  from { width: 50px; opacity: 0.6; }
+  to { width: 200px; opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container-1 {
+    padding: 40px 30px;
+  }
+
+  .title h1 {
+    font-size: 1.8rem;
+  }
+
+  .title p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  .container-1 {
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+
+  .title h1 {
+    font-size: 1.6rem;
+  }
+
+  .field input,
+  .dropdown,
+  .field button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    height: 42px;
+  }
+
+  .loading-bar {
+    max-width: 100%;
+  }
+}

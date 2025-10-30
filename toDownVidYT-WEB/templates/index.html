@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Downloader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style-02.css') }}">
+</head>
+<body>
+  <div class="container-1">
+    <div class="title">
+      <h1>YouTube Video Downloader</h1>
+      <p>Paste the link below to download your favorite videos</p>
+    </div>
+    <form class="field" method="POST" onsubmit="showLoading()">
+      <input type="text" name="url" placeholder="Enter YouTube URL" required>
+
+      <select name="format" class="dropdown">
+        <option value="0">Best Audio + Video</option>
+        <option value="1">Best Audio Only</option>
+        <option value="2">Best Video Only</option>
+        <option value="3" selected>Best (Auto)</option>
+      </select>
+
+      <button type="submit">Download</button>
+    </form>
+
+    <div id="loading" class="loading-bar" style="display:none;">
+      <div class="bar"></div>
+      <p>Downloading... please wait</p>
+    </div>
+
+    {% if message %}
+      <p style="color: white; text-align: center; margin-top: 15px;">{{ message }}</p>
+    {% endif %}
+  </div>
+
+  <script>
+    function showLoading() {
+      document.getElementById('loading').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
