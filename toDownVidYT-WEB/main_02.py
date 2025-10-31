@@ -1,3 +1,4 @@
+# Downloads YouTube videos with subtitles using yt_dlp 
 import yt_dlp
 import os
 
@@ -19,3 +20,4 @@ def yt_iops(url, output, path, name=None, choice_index=0):
 
     with yt_dlp.YoutubeDL(yt_opts) as ydl:
         ydl.download([url])
+
