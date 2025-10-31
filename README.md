@@ -53,34 +53,26 @@ toDownVidYT/
       <li>📦 Modular structure separating logic and interface</li>
     </ul>
   </div>
-
-  <div class="section">
-    <h2>🚀 Quick Start Guide</h2>
-
-    <h2>1️⃣ Install Dependencies</h2>
-    <pre><code>pip install -r requirements.txt</code></pre>
-
-    <h2>2️⃣ Install FFmpeg</h2>
-    <p>Download <b>FFmpeg 7.1 or newer</b> and add it to your system PATH.</p>
-    <pre><code>ffmpeg -version</code></pre>
-
-    <h2>▶️ Run CLI Version</h2>
-    <pre><code>cd CLI 
-    python main_02.py</code></pre>
-    <ul>
+<div>
+  <h2>🚀 Quick Start Guide</h2>
+  <h3>1. Intall dependecies</h3>
+  <pre><code>pip install -r requirements.txt</code></pre>
+  <h3>2. Install FFmpeg</h3>
+  <p>Download <b>FFmpeg 7.1 or newer</b> and add it to your system PATH</p>
+  <pre><code>ffmpeg -version</code></pre>
+  <h3>3. Run CLI Version</h3>
+  <pre>cd CLI<br><code>python .\main.py</code></pre>
+  <ul>
       <li>Enter YouTube video URL</li>
       <li>Select format and download directory</li>
       <li>Enter optional filename</li>
     </ul>
-
-    <h2>🌐 Run Web Version</h2>
-    <pre><code>cd WEB-based
-python app.py</code></pre>
-    <p>Then open your browser at:</p>
-    <pre><code>http://127.0.0.1:5000</code></pre>
-    <p>Paste a link, select a format, and click <b>Download</b>. Files appear in the <code>/downloads</code> folder.</p>
-  </div>
-
+  <h2>🌐 Run Web Version</h2>
+  <pre><code>cd WEB-based<br>python app.py</code></pre>
+  <p>Then open your browser at: </p>
+  <pre><code>http://127.0.0.1:5000</code></pre>
+  <p>Paste a link, select a format, and click <b>Download</b>. Files appear in the <code>/downloads</code></p>
+</div>
   <div class="section">
     <h2>🎬 Playback Options</h2>
     <ul>
