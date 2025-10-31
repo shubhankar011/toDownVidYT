@@ -39,7 +39,7 @@ toDownVidYT/
 │   └── downloads/               # Output folder for downloaded media
 │
 ├── requirements.txt             # Dependencies (Flask, yt-dlp, etc.)
-└── README.html / README.md      # Project documentation
+└── README.md      # Project documentation
     </pre>
   </div>
 
