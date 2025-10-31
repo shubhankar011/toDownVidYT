@@ -13,6 +13,11 @@
   <div class="section">
     <h2>🧩 Overview</h2>
     <p><b>toDownVidYT</b> is a two-part Python project designed to download YouTube videos or audio with full control over format, naming, and storage — first as a <b>CLI tool</b>, later expanded into a <b>web-based Flask interface</b>.</p>
+    <h2>
+      Collaborators
+    </h2>
+    <li><a href="https://github.com/shubhankar011">Shubhankar Kumar</a></li>
+    <li><a href="https://github.com/viratdixit2009-ctrl">Virat Dixit</li>
   </div>
 
   <div class="section">
