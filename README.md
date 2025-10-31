@@ -57,14 +57,14 @@ toDownVidYT/
   <div class="section">
     <h2>🚀 Quick Start Guide</h2>
 
-    <h3>1️⃣ Install Dependencies</h3>
+    <b>1️⃣ Install Dependencies</b>
     <pre><code>pip install -r requirements.txt</code></pre>
 
-    <h3>2️⃣ Install FFmpeg</h3>
+    <b>2️⃣ Install FFmpeg</b>
     <p>Download <b>FFmpeg 7.1 or newer</b> and add it to your system PATH.</p>
     <pre><code>ffmpeg -version</code></pre>
 
-    <h3>▶️ Run CLI Version</h3>
+    <b>▶️ Run CLI Version</b>
     <pre><code>cd CLI
 python main_02.py</code></pre>
     <ul>
@@ -73,7 +73,7 @@ python main_02.py</code></pre>
       <li>Enter optional filename</li>
     </ul>
 
-    <h3>🌐 Run Web Version</h3>
+    <b>🌐 Run Web Version</b>
     <pre><code>cd WEB-based
 python app.py</code></pre>
     <p>Then open your browser at:</p>
