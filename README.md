@@ -57,23 +57,23 @@ toDownVidYT/
   <div class="section">
     <h2>🚀 Quick Start Guide</h2>
 
-    <b>1️⃣ Install Dependencies</b>
+    <h2>1️⃣ Install Dependencies</h2>
     <pre><code>pip install -r requirements.txt</code></pre>
 
-    <b>2️⃣ Install FFmpeg</b>
+    <h2>2️⃣ Install FFmpeg</h2>
     <p>Download <b>FFmpeg 7.1 or newer</b> and add it to your system PATH.</p>
     <pre><code>ffmpeg -version</code></pre>
 
-    <b>▶️ Run CLI Version</b>
-    <pre><code>cd CLI
-python main_02.py</code></pre>
+    <h2>▶️ Run CLI Version</h2>
+    <pre><code>cd CLI 
+    python main_02.py</code></pre>
     <ul>
       <li>Enter YouTube video URL</li>
       <li>Select format and download directory</li>
       <li>Enter optional filename</li>
     </ul>
 
-    <b>🌐 Run Web Version</b>
+    <h2>🌐 Run Web Version</h2>
     <pre><code>cd WEB-based
 python app.py</code></pre>
     <p>Then open your browser at:</p>
