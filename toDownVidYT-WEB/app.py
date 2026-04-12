@@ -16,9 +16,9 @@ def YTD():
         else:
             try:
                 output = ["bestaudio+bestvideo", "bestaudio", "bestvideo", "best"]
-                path = os.path.join(os.getcwd(), 'downloads')
-                if not os.path.exists(path):
-                    os.makedirs(path)
+                # path = os.path.join(os.getcwd(), 'downloads')
+                # if not os.path.exists(path):
+                #    os.makedirs(path)
 
                 if os.path.exists('/tmp'):
                     for file in os.listdir('/tmp'):
