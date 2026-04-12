@@ -18,7 +18,12 @@ def YTD():
                 output = ["bestaudio+bestvideo", "bestaudio", "bestvideo", "best"]
                 # path = os.path.join(os.getcwd(), 'downloads')
                 # if not os.path.exists(path):
-                #    os.makedirs(path)
+                #     os.makedirs(path)
+
+                cookies_env = os.getenv('YT_COOKIES')
+                if cookies_env:
+                    with open('/tmp/cookies.txt', 'w') as f:
+                        f.write(cookies_env)
 
                 if os.path.exists('/tmp'):
                     for file in os.listdir('/tmp'):
