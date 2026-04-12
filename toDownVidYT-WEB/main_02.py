@@ -14,9 +14,9 @@ def yt_iops(url, output, path, name=None, choice_index=0):
         # 'ffmpeg_location': r'C:\ffmpeg\bin'
     }
 
-    # cookie_path = os.path.join(os.path.dirname(__file__), 'cookies.txt')
-    # if os.path.exists(cookie_path):
-    #     yt_opts['cookiefile'] = cookie_path
+    cookie_path = os.path.join(os.path.dirname(__file__), 'cookies.txt')
+    if os.path.exists(cookie_path):
+        yt_opts['cookiefile'] = cookie_path
 
     with yt_dlp.YoutubeDL(yt_opts) as ydl:
         ydl.download([url])
